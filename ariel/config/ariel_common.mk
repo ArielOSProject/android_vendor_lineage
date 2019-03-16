@@ -12,7 +12,7 @@ PRODUCT_COPY_FILES += \
 
 # Copy .rc files
 PRODUCT_COPY_FILES += \
-    vendor/ariel/prebuilt/common/etc/init/init.ariel.rc:system/etc/init/init.ariel.rc
+    vendor/lineage/ariel/prebuilt/common/etc/init/init.ariel.rc:system/etc/init/init.ariel.rc
 
 # Make sure data roaming is off!
 PRODUCT_PROPERTY_OVERRIDES += \
