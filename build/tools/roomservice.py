@@ -73,7 +73,7 @@ def add_auth(githubreq):
 
 if not depsonly:
     if 'ariel' in product:
-       githubreq = urllib.request.Request("https://api.github.com/search/repositories?q=%s+user:ArielsOSProject+in:name+fork:true" % device)
+       githubreq = urllib.request.Request("https://api.github.com/search/repositories?q=%s+user:ArielOSProject+in:name+fork:true" % device)
     else:
        githubreq = urllib.request.Request("https://api.github.com/search/repositories?q=%s+user:LineageOS+in:name+fork:true" % device)
     add_auth(githubreq)
