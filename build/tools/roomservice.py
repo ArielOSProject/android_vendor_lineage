@@ -72,7 +72,10 @@ def add_auth(githubreq):
         githubreq.add_header("Authorization","Basic %s" % githubauth)
 
 if not depsonly:
-    githubreq = urllib.request.Request("https://api.github.com/search/repositories?q=%s+user:LineageOS+in:name+fork:true" % device)
+    if 'ariel' in product:
+       githubreq = urllib.request.Request("https://api.github.com/search/repositories?q=%s+user:ArielsOSProject+in:name+fork:true" % device)
+    else:
+       githubreq = urllib.request.Request("https://api.github.com/search/repositories?q=%s+user:LineageOS+in:name+fork:true" % device)
     add_auth(githubreq)
     try:
         result = json.loads(urllib.request.urlopen(githubreq).read().decode())
@@ -180,7 +183,15 @@ def add_to_manifest(repositories, fallback_branch = None):
             continue
 
         print('Adding dependency: LineageOS/%s -> %s' % (repo_name, repo_target))
-        project = ElementTree.Element("project", attrib = { "path": repo_target,
+        if 'ariel' in product:
+            if 'kernel' in repo_target:
+                project = ElementTree.Element("project", attrib = { "path": repo_target,
+                "remote": "github", "name": "LineageOS/%s" % repo_name })
+            else:
+                project = ElementTree.Element("project", attrib = { "path": repo_target,
+                "remote": "ariel", "name": "ArielOSProject/%s" % repo_name })
+        else:
+            project = ElementTree.Element("project", attrib = { "path": repo_target,
             "remote": "github", "name": "LineageOS/%s" % repo_name })
 
         if 'branch' in repository:

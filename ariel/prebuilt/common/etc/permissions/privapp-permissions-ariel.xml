@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+
+    <privapp-permissions package="com.ariel.guardian">
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <!-- Usage stats -->
+        <permission name="android.permission.PACKAGE_USAGE_STATS"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.ariel.setupwizard">
+        <permission name="android.permission.BACKUP"/>
+        <permission name="android.permission.MANAGE_DEVICE_ADMINS"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.dragons.aurora">
+        <permission name="android.permission.INSTALL_PACKAGES"/>
+    </privapp-permissions>
+
+    <!-- Unified NLP provider, fakes GMS -->
+    <privapp-permissions package="com.google.android.gms">
+        <permission name="android.permission.INSTALL_LOCATION_PROVIDER"/>
+    </privapp-permissions>
+
+</permissions>
