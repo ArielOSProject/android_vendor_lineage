@@ -52,7 +52,10 @@ except:
     device = product
 
 if not depsonly:
-    print("Device %s not found. Attempting to retrieve device repository from LineageOS Github (http://github.com/LineageOS)." % device)
+    if 'ariel' in product:
+       print("Device %s not found. Attempting to retrieve device repository from ArielOS Github (http://github.com/ArielOSProject)." % device)
+    else:
+       print("Device %s not found. Attempting to retrieve device repository from LineageOS Github (http://github.com/LineageOS)." % device)
 
 repositories = []
 
